@@ -32,6 +32,12 @@ customer = {
 app = Flask("app")
 
 
+@app.route("/", methods=["GET"])
+def welcome():
+    return "Please type - /predict - to predict"
+
+
+
 @app.route("/predict", methods=["GET"])
 def predict():
     user_feature = dv.transform([customer])
